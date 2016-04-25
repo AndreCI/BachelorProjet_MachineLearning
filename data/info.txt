@@ -1,0 +1,153 @@
+BCN_BUD : 1 ; currency : € ; average (in €) : 82.1 ; averageDateOfBiggestChange : 151 days.
+For this route, the average price change is : 28.53
+    The day nbr 1, the average price is 74.06 on the route.
+    The day nbr 2, the average price is 91.15 on the route.
+    The day nbr 3, the average price is 80.92 on the route.
+    The day nbr 4, the average price is 81.98 on the route.
+    The day nbr 5, the average price is 78.17 on the route.
+    The day nbr 6, the average price is 80.8 on the route.
+    The day nbr 7, the average price is 88.13 on the route.
+BUD_BCN : 2 ; currency : Ft ; average (in €) : 84.7 ; averageDateOfBiggestChange : 155 days.
+For this route, the average price change is : 29.69
+    The day nbr 1, the average price is 74.15 on the route.
+    The day nbr 2, the average price is 76.52 on the route.
+    The day nbr 3, the average price is 73.62 on the route.
+    The day nbr 4, the average price is 91.59 on the route.
+    The day nbr 5, the average price is 88.46 on the route.
+    The day nbr 6, the average price is 93.16 on the route.
+    The day nbr 7, the average price is 96.15 on the route.
+CRL_OTP : 3 ; currency : € ; average (in €) : 58.39 ; averageDateOfBiggestChange : 112 days.
+For this route, the average price change is : 17.09
+    The day nbr 1, the average price is 64.79 on the route.
+    The day nbr 2, the average price is 56.05 on the route.
+    The day nbr 3, the average price is 52.45 on the route.
+    The day nbr 4, the average price is 52.51 on the route.
+    The day nbr 5, the average price is 54.82 on the route.
+    The day nbr 6, the average price is 62.34 on the route.
+    The day nbr 7, the average price is 65.82 on the route.
+MLH_SKP : 4 ; currency : € ; average (in €) : 68.87 ; averageDateOfBiggestChange : 137 days.
+For this route, the average price change is : 21.81
+    The day nbr 1, the average price is 68.33 on the route.
+    The day nbr 2, the average price is 52.57 on the route.
+    The day nbr 3, the average price is 67.9 on the route.
+    The day nbr 4, the average price is 64.4 on the route.
+    The day nbr 5, the average price is 74.01 on the route.
+    The day nbr 6, the average price is 67.2 on the route.
+    The day nbr 7, the average price is 81.84 on the route.
+MMX_SKP : 5 ; currency : kr ; average (in €) : 58.51 ; averageDateOfBiggestChange : 119 days.
+For this route, the average price change is : 19.31
+    The day nbr 1, the average price is 56.71 on the route.
+    The day nbr 2, the average price is 55.19 on the route.
+    The day nbr 3, the average price is 61.51 on the route.
+    The day nbr 4, the average price is 56.81 on the route.
+    The day nbr 5, the average price is 63.06 on the route.
+    The day nbr 6, the average price is 62.65 on the route.
+    The day nbr 7, the average price is 53.42 on the route.
+OTP_CRL : 6 ; currency : lei ; average (in €) : 66.45 ; averageDateOfBiggestChange : 106 days.
+For this route, the average price change is : 19.03
+    The day nbr 1, the average price is 75.73 on the route.
+    The day nbr 2, the average price is 68.95 on the route.
+    The day nbr 3, the average price is 62.86 on the route.
+    The day nbr 4, the average price is 60.55 on the route.
+    The day nbr 5, the average price is 61.28 on the route.
+    The day nbr 6, the average price is 64.03 on the route.
+    The day nbr 7, the average price is 71.91 on the route.
+SKP_MLH : 7 ; currency : MKD ; average (in €) : 79.63 ; averageDateOfBiggestChange : 114 days.
+For this route, the average price change is : 25.57
+    The day nbr 1, the average price is 98.23 on the route.
+    The day nbr 2, the average price is 70.67 on the route.
+    The day nbr 3, the average price is 80.22 on the route.
+    The day nbr 4, the average price is 66.89 on the route.
+    The day nbr 5, the average price is 71.44 on the route.
+    The day nbr 6, the average price is 67.97 on the route.
+    The day nbr 7, the average price is 93.34 on the route.
+SKP_MMX : 8 ; currency : MKD ; average (in €) : 77.81 ; averageDateOfBiggestChange : 105 days.
+For this route, the average price change is : 23.86
+    The day nbr 1, the average price is 84.01 on the route.
+    The day nbr 2, the average price is 77.58 on the route.
+    The day nbr 3, the average price is 80.37 on the route.
+    The day nbr 4, the average price is 71.94 on the route.
+    The day nbr 5, the average price is 76.02 on the route.
+    The day nbr 6, the average price is 77.36 on the route.
+    The day nbr 7, the average price is 82.26 on the route.
+BGY_OTP : 9 ; currency : € ; average (in €) : 45.9 ; averageDateOfBiggestChange : 166 days.
+For this route, the average price change is : 19.72
+    The day nbr 1, the average price is 46.75 on the route.
+    The day nbr 2, the average price is 47.41 on the route.
+    The day nbr 3, the average price is 44.71 on the route.
+    The day nbr 4, the average price is 43.44 on the route.
+    The day nbr 5, the average price is 44.17 on the route.
+    The day nbr 6, the average price is 45.45 on the route.
+    The day nbr 7, the average price is 49.37 on the route.
+BUD_VKO : 10 ; currency : Ft ; average (in €) : 77.72 ; averageDateOfBiggestChange : 133 days.
+For this route, the average price change is : 27.73
+    The day nbr 1, the average price is 82.67 on the route.
+    The day nbr 2, the average price is 81.49 on the route.
+    The day nbr 3, the average price is 82.45 on the route.
+    The day nbr 4, the average price is 75.2 on the route.
+    The day nbr 5, the average price is 73.01 on the route.
+    The day nbr 6, the average price is 71.13 on the route.
+    The day nbr 7, the average price is 78.08 on the route.
+CRL_WAW : 11 ; currency : € ; average (in €) : 45.64 ; averageDateOfBiggestChange : 113 days.
+For this route, the average price change is : 19.32
+    The day nbr 1, the average price is 41.13 on the route.
+    The day nbr 2, the average price is 39.07 on the route.
+    The day nbr 3, the average price is 38.11 on the route.
+    The day nbr 4, the average price is 37.84 on the route.
+    The day nbr 5, the average price is 50.11 on the route.
+    The day nbr 6, the average price is 64.95 on the route.
+    The day nbr 7, the average price is 47.99 on the route.
+LTN_OTP : 12 ; currency : Livre ; average (in €) : 87.23 ; averageDateOfBiggestChange : 167 days.
+For this route, the average price change is : 33.31
+    The day nbr 1, the average price is 87.69 on the route.
+    The day nbr 2, the average price is 85.82 on the route.
+    The day nbr 3, the average price is 83.13 on the route.
+    The day nbr 4, the average price is 83.33 on the route.
+    The day nbr 5, the average price is 87.05 on the route.
+    The day nbr 6, the average price is 92.85 on the route.
+    The day nbr 7, the average price is 90.67 on the route.
+LTN_PRG : 13 ; currency : Livre ; average (in €) : 69.77 ; averageDateOfBiggestChange : 123 days.
+For this route, the average price change is : 27.14
+    The day nbr 1, the average price is 59.19 on the route.
+    The day nbr 2, the average price is 60.82 on the route.
+    The day nbr 3, the average price is 59.55 on the route.
+    The day nbr 4, the average price is 66.18 on the route.
+    The day nbr 5, the average price is 88.85 on the route.
+    The day nbr 6, the average price is 92.05 on the route.
+    The day nbr 7, the average price is 61.45 on the route.
+OTP_BGY : 14 ; currency : lei ; average (in €) : 45.54 ; averageDateOfBiggestChange : 168 days.
+For this route, the average price change is : 19.21
+    The day nbr 1, the average price is 46.24 on the route.
+    The day nbr 2, the average price is 47.49 on the route.
+    The day nbr 3, the average price is 42.54 on the route.
+    The day nbr 4, the average price is 41.47 on the route.
+    The day nbr 5, the average price is 44.38 on the route.
+    The day nbr 6, the average price is 46.66 on the route.
+    The day nbr 7, the average price is 49.93 on the route.
+OTP_LTN : 15 ; currency : lei ; average (in €) : 103.14 ; averageDateOfBiggestChange : 174 days.
+For this route, the average price change is : 42.07
+    The day nbr 1, the average price is 111.58 on the route.
+    The day nbr 2, the average price is 106.68 on the route.
+    The day nbr 3, the average price is 101.3 on the route.
+    The day nbr 4, the average price is 97.4 on the route.
+    The day nbr 5, the average price is 97.34 on the route.
+    The day nbr 6, the average price is 101.31 on the route.
+    The day nbr 7, the average price is 106.43 on the route.
+PRG_LTN : 16 ; currency : Ft ; average (in €) : 64.9 ; averageDateOfBiggestChange : 122 days.
+For this route, the average price change is : 22.14
+    The day nbr 1, the average price is 70.2 on the route.
+    The day nbr 2, the average price is 84.57 on the route.
+    The day nbr 3, the average price is 61.25 on the route.
+    The day nbr 4, the average price is 53.02 on the route.
+    The day nbr 5, the average price is 59.25 on the route.
+    The day nbr 6, the average price is 61.54 on the route.
+    The day nbr 7, the average price is 64.65 on the route.
+VKO_BUD : 17 ; currency : € ; average (in €) : 75.53 ; averageDateOfBiggestChange : 132 days.
+For this route, the average price change is : 26.42
+    The day nbr 1, the average price is 78.67 on the route.
+    The day nbr 2, the average price is 70.77 on the route.
+    The day nbr 3, the average price is 70.48 on the route.
+    The day nbr 4, the average price is 69.42 on the route.
+    The day nbr 5, the average price is 71.95 on the route.
+    The day nbr 6, the average price is 77.98 on the route.
+    The day nbr 7, the average price is 87.79 on the route.

@@ -1,0 +1,17 @@
+BCN_BUD : 1 ; currency : € ; average : 82.1 ; averageDateOfBiggestChange : 170.6601736111111 days.
+BUD_BCN : 2 ; currency : Ft ; average : 84.7 ; averageDateOfBiggestChange : 167.78005787037037 days.
+CRL_OTP : 3 ; currency : € ; average : 58.39 ; averageDateOfBiggestChange : 182.97469907407407 days.
+MLH_SKP : 4 ; currency : € ; average : 68.87 ; averageDateOfBiggestChange : 179.81613425925926 days.
+MMX_SKP : 5 ; currency : kr ; average : 58.51 ; averageDateOfBiggestChange : 183.34009259259258 days.
+OTP_CRL : 6 ; currency : lei ; average : 66.45 ; averageDateOfBiggestChange : 204.09283564814814 days.
+SKP_MLH : 7 ; currency : MKD ; average : 79.63 ; averageDateOfBiggestChange : 201.90984953703705 days.
+SKP_MMX : 8 ; currency : MKD ; average : 77.81 ; averageDateOfBiggestChange : 191.27405092592593 days.
+BGY_OTP : 9 ; currency : € ; average : 45.9 ; averageDateOfBiggestChange : 155.56915509259258 days.
+BUD_VKO : 10 ; currency : Ft ; average : 77.72 ; averageDateOfBiggestChange : 186.35271990740742 days.
+CRL_WAW : 11 ; currency : € ; average : 45.64 ; averageDateOfBiggestChange : 153.0025347222222 days.
+LTN_OTP : 12 ; currency : Livre ; average : 87.23 ; averageDateOfBiggestChange : 137.89814814814815 days.
+LTN_PRG : 13 ; currency : Livre ; average : 69.77 ; averageDateOfBiggestChange : 229.89600694444445 days.
+OTP_BGY : 14 ; currency : lei ; average : 45.54 ; averageDateOfBiggestChange : 154.39947916666668 days.
+OTP_LTN : 15 ; currency : lei ; average : 103.14 ; averageDateOfBiggestChange : 159.58461805555555 days.
+PRG_LTN : 16 ; currency : Ft ; average : 64.9 ; averageDateOfBiggestChange : 165.09444444444443 days.
+VKO_BUD : 17 ; currency : € ; average : 75.53 ; averageDateOfBiggestChange : 163.99494212962964 days.

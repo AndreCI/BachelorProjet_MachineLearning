@@ -1,0 +1,192 @@
+Logging time: 1451918683302
+============================
+The main program has started
+Logging time: 1451918683304
+The crawling process has started.
+Logging time: 1451919318278
+============================
+The main program has started
+Logging time: 1451919600001
+The crawling process has started.
+Logging time: 1451919652725
+The crawling process has finished successfully.
+Logging time: 1452006000000
+The crawling process has started.
+Logging time: 1452006045056
+The crawling process has finished successfully.
+Logging time: 1452092400017
+The crawling process has started.
+Logging time: 1452092459854
+The crawling process has finished successfully.
+Logging time: 1452178800000
+The crawling process has started.
+Logging time: 1452178848041
+The crawling process has finished successfully.
+Logging time: 1452265200000
+The crawling process has started.
+Logging time: 1452265236607
+The crawling process has finished successfully.
+Logging time: 1452351600000
+The crawling process has started.
+Logging time: 1452351646414
+The crawling process has finished successfully.
+Logging time: 1452438000000
+The crawling process has started.
+Logging time: 1452438040789
+The crawling process has finished successfully.
+Logging time: 1452524400001
+The crawling process has started.
+Logging time: 1452524454343
+The crawling process has finished successfully.
+Logging time: 1452610800000
+The crawling process has started.
+Logging time: 1452610862805
+The crawling process has finished successfully.
+Logging time: 1452697200001
+The crawling process has started.
+Logging time: 1452697253035
+The crawling process has finished successfully.
+Logging time: 1452783600000
+The crawling process has started.
+Logging time: 1452783648541
+The crawling process has finished successfully.
+Logging time: 1452870000001
+The crawling process has started.
+Logging time: 1452870039589
+The crawling process has finished successfully.
+Logging time: 1452956400001
+The crawling process has started.
+Logging time: 1452956443969
+The crawling process has finished successfully.
+Logging time: 1453042800000
+The crawling process has started.
+Logging time: 1453042830536
+The crawling process has finished successfully.
+Logging time: 1453129200001
+The crawling process has started.
+Logging time: 1453129233613
+The crawling process has finished successfully.
+Logging time: 1453215600001
+The crawling process has started.
+Logging time: 1453215641206
+The crawling process has finished successfully.
+Logging time: 1453302000001
+The crawling process has started.
+Logging time: 1453302048113
+The crawling process has finished successfully.
+Logging time: 1453388400028
+The crawling process has started.
+Logging time: 1453388476497
+The crawling process has finished successfully.
+Logging time: 1453474800001
+The crawling process has started.
+Logging time: 1453474876564
+The crawling process has finished successfully.
+Logging time: 1453561200000
+The crawling process has started.
+Logging time: 1453561266799
+The crawling process has finished successfully.
+Logging time: 1453647600000
+The crawling process has started.
+Logging time: 1453647660314
+The crawling process has finished successfully.
+Logging time: 1453734000000
+The crawling process has started.
+Logging time: 1453734116763
+The crawling process has finished successfully.
+Logging time: 1453820400000
+The crawling process has started.
+Logging time: 1453820571723
+The crawling process has finished successfully.
+Logging time: 1453906800000
+The crawling process has started.
+Logging time: 1453906931038
+The crawling process has finished successfully.
+Logging time: 1453993200000
+The crawling process has started.
+Logging time: 1453993332425
+The crawling process has finished successfully.
+Logging time: 1454079600001
+The crawling process has started.
+Logging time: 1454079692284
+The crawling process has finished successfully.
+Logging time: 1454166000000
+The crawling process has started.
+Logging time: 1454166076221
+The crawling process has finished successfully.
+Logging time: 1454252400001
+The crawling process has started.
+Logging time: 1454252447465
+The crawling process has finished successfully.
+Logging time: 1454338800000
+The crawling process has started.
+Logging time: 1454338870395
+The crawling process has finished successfully.
+Logging time: 1454425200000
+The crawling process has started.
+Logging time: 1454425294930
+The crawling process has finished successfully.
+Logging time: 1454511600000
+The crawling process has started.
+Logging time: 1454511790178
+The crawling process has finished successfully.
+Logging time: 1454598000000
+The crawling process has started.
+Logging time: 1454598126385
+The crawling process has finished successfully.
+Logging time: 1454684400000
+The crawling process has started.
+Logging time: 1454684554335
+The crawling process has finished successfully.
+Logging time: 1454770800000
+The crawling process has started.
+Logging time: 1454770921220
+The crawling process has finished successfully.
+Logging time: 1454857200000
+The crawling process has started.
+Logging time: 1454857294412
+The crawling process has finished successfully.
+Logging time: 1454943600001
+The crawling process has started.
+Logging time: 1454943705739
+The crawling process has finished successfully.
+Logging time: 1455030000000
+The crawling process has started.
+Logging time: 1455030082559
+The crawling process has finished successfully.
+Logging time: 1455116400000
+The crawling process has started.
+Logging time: 1455116465984
+The crawling process has finished successfully.
+Logging time: 1455202800000
+The crawling process has started.
+Logging time: 1455202939545
+The crawling process has finished successfully.
+Logging time: 1455289200000
+The crawling process has started.
+Logging time: 1455289258549
+The crawling process has finished successfully.
+Logging time: 1455375600000
+The crawling process has started.
+Logging time: 1455375795152
+The crawling process has finished successfully.
+Logging time: 1455462000000
+The crawling process has started.
+Logging time: 1455462099866
+The crawling process has finished successfully.
+Logging time: 1455548400000
+The crawling process has started.
+Logging time: 1455548488893
+The crawling process has finished successfully.
+Logging time: 1455634800000
+The crawling process has started.
+Logging time: 1455634916187
+The crawling process has finished successfully.
+Logging time: 1455721200000
+The crawling process has started.
+Logging time: 1455721382778
+The crawling process has finished successfully.
+Logging time: 1455807600000
+The crawling process has started.
+Logging time: 1455807808828
+The crawling process has finished successfully.
