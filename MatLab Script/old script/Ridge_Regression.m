@@ -47,7 +47,7 @@ for j=1:indice_boucle
         nbr_feature = j;
     end
 %Getting datas
-filename = ['C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_' num2str(route) '.txt'];
+filename = ['dataCSV_route_' num2str(route) '.txt'];
 Data = double(csvread(filename, 1, 0));
 [m,n] = size(Data);
 if(switcher==0)
@@ -132,7 +132,7 @@ old_CV_Error = 10^160;
 CVE_vector = ones(size_ridge_coef,1);
 for i=1:size_ridge_coef
     ridge_theta = ridge_theta_matrix(i,1:nbr_feature);
-    CVE = cost_function(ridge_theta,dates_Cross,prices_Cross,lambda_coef(i));
+    CVE = cost_function_SingleRoute(ridge_theta,dates_Cross,prices_Cross,lambda_coef(i));
     
     if(CVE < old_CV_Error)
         idx = i;
@@ -147,13 +147,13 @@ lambda_CV = lambda_coef(idx);
 
 
 %Displaying some data
-TEwR = cost_function(linear_theta,dates,prices,lambda_CV);
-CVEwR = cost_function(linear_theta,dates_Cross,prices_Cross,lambda_CV);
-TestEwR = cost_function(linear_theta,dates_Test,prices_Test,lambda_CV);
+TEwR = cost_function_SingleRoute(linear_theta,dates,prices,lambda_CV);
+CVEwR = cost_function_SingleRoute(linear_theta,dates_Cross,prices_Cross,lambda_CV);
+TestEwR = cost_function_SingleRoute(linear_theta,dates_Test,prices_Test,lambda_CV);
 
-TE = cost_function(ridge_theta_matrix(idx,1:nbr_feature),dates,prices,lambda_CV);
-CVE = cost_function(ridge_theta_matrix(idx,1:nbr_feature),dates_Cross,prices_Cross,lambda_CV);
-TestE = cost_function(ridge_theta_matrix(idx,1:nbr_feature),dates_Test,prices_Test,lambda_CV);
+TE = cost_function_SingleRoute(ridge_theta_matrix(idx,1:nbr_feature),dates,prices,lambda_CV);
+CVE = cost_function_SingleRoute(ridge_theta_matrix(idx,1:nbr_feature),dates_Cross,prices_Cross,lambda_CV);
+TestE = cost_function_SingleRoute(ridge_theta_matrix(idx,1:nbr_feature),dates_Test,prices_Test,lambda_CV);
 %End of datas
 if(switcher~=1)
 display_ridge_theta = ridge_theta_matrix(idx,1:nbr_feature);
@@ -225,9 +225,9 @@ if(right_ridge_theta~=0)
        display_linear_theta = right_linear_theta;
        lambda_CV = right_lambda;
 end
-    fplot(@(x)hypothesis(display_ridge_theta,x/(dateMax/(3600*24)))*priceMax, Limits)
+    fplot(@(x)hypothesis_SingleRoute(display_ridge_theta,x/(dateMax/(3600*24)))*priceMax, Limits)
     hold on;
-    fplot(@(x)hypothesis(display_linear_theta,x/(dateMax/(3600*24)))*priceMax, Limits)
+    fplot(@(x)hypothesis_SingleRoute(display_linear_theta,x/(dateMax/(3600*24)))*priceMax, Limits)
     hold on;
     
 Xaxis = double(cloud(:,1)/(3600*24));
