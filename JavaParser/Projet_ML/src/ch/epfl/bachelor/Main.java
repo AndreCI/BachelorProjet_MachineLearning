@@ -41,7 +41,8 @@ public class Main {
         }
         currencys = new ArrayList<>();
         dataHolder = new DataHolder();
-        for(int k=9; k<18;k++) {
+      //  for(int k=9; k<18;k++) {
+        int k =1;
             CSVwriter writer = new CSVwriter("dataCSV", k);
             for (loopNumber = 0; loopNumber < 2; loopNumber++) {
                 decodeForDataPath(largeDataPath, writer);
@@ -65,7 +66,7 @@ public class Main {
             infoWriter.close();
             writer.close();
             System.out.println("Finished in " + (endTime - startTime) / Math.pow(10, 9));
-        }
+
     }
     public static void decodeForDataPath(File data, CSVwriter writer){
         JSONreader reader;

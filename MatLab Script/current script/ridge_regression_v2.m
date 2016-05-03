@@ -1,4 +1,8 @@
 clear;
+fileID_lambda = fopen('lambda_out.txt','w');
+fileID_theta = fopen('theta_out.txt','w');
+fileID_CVE = fopen('CVE_out.txt','w');
+
 route=4;
 nbr_feature_max = 8;
 nbr_feature=6+17;
@@ -14,8 +18,13 @@ right_number_complexity=0;
 size_ridge_coef=500;
 CVE_D = 0;
 CVE_matrix = ones(k_fold_number,1);
+format = [''];
+for l=1:nbr_feature+1
+    format = [format '%6.6f '];
+end
+format
 
-for j=0:1%k_fold_number-1
+for j=0:1
 %Getting datas
 %End of getting datas
 
@@ -95,22 +104,13 @@ CVE_D = CVE_D+old_CV_Error;
 %Displaying some data
 %End of datas
 
+fprint(fileID_Theta,format,ridge_theta_matrix(1:nbr_feature+1,idx)');
+fprint(fileID_Theta,'%d\n',j);
+fprint(fileID_CVE,'%6.6f',old_CV_Error);
+fprint(fileID_CVE,'%d\n',j);
+fprint(fileID_lambda,'%6.6f',lambda_CV);
+fprint(fileID_labmda,'%d\n',j);
 end
 CVE_D = CVE_D/k_fold_number
 %preparing the figure
-figure;
-Limits = [0,1*dateMax/(3600*24),0,1*priceMax];
-    route_nbr = 4;
-    fplot(@(x)hypothesis_display(ridge_theta_matrix(1:nbr_feature+1,idx),x/(dateMax/(3600*24)),route_nbr)*priceMax, Limits)
-    hold on;
-    
-Xaxis = double(cloud(:,1)/(3600*24));
-Yaxis = double(cloud(:,2));
-plot(Xaxis,Yaxis,'*')
-title(['Linear regression route = ' num2str(route) ', with ' num2str(nbr_feature) ' features']);
-xlabel('Number of days before flight');
-ylabel('Price (in €)');
-ridge_legend = ['ridge, lambda = ' num2str(lambda_CV) ];%' ; TrainError : ' num2str(TE) ' ; CVError : ' num2str(CVE) ' ; TestError : ' num2str(TestE)];
-data_legend = ['Data (' num2str(nbr_data_displayed) ')'];
-legend(ridge_legend,data_legend);
-%End of figure
+

@@ -9,6 +9,7 @@ import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -56,7 +57,10 @@ public class JSONreader {
                             if(Main.loopNumber==0) {
                                 dataHolder.addValueForAveragePrice(route, price, new Date(flightDepartureTime*1000));
                                 dataHolder.addDataForAverageBiggestPriceChange(route,flightDepartureTime, price);
-                                writer.writerLine(uTimeCurrentDay, route, price, flightDepartureTime);
+
+                                Date departureTime = new Date(flightDepartureTime*1000);
+                                int month = departureTime.getMonth();
+                                writer.writerLine(uTimeCurrentDay, route, price, flightDepartureTime, month);
                             }else if(Main.loopNumber==1){
                                 dataHolder.addDataForBiggestPriceChange(route,uTimeCurrentDay,flightDepartureTime,price);
                             }
