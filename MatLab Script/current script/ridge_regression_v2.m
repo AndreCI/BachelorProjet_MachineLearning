@@ -1,11 +1,9 @@
 clear;
-fileID_lambda = fopen('lambda_out.txt','w');
-fileID_theta = fopen('theta_out.txt','w');
-fileID_CVE = fopen('CVE_out.txt','w');
-
+writerFile = fopen('results.txt','w');
 route=4;
 nbr_feature_max = 8;
-nbr_feature=6+17;
+nbr_feature=6+12;
+fprintf(writerFile,'Idx,lambda,CrossValidationError,ThetaParas (%d)...\n',nbr_feature);
 k_fold_number=10;
 %filename = ['C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_' num2str(route) '.txt'];
 filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_second.txt';
@@ -18,13 +16,8 @@ right_number_complexity=0;
 size_ridge_coef=500;
 CVE_D = 0;
 CVE_matrix = ones(k_fold_number,1);
-format = [''];
-for l=1:nbr_feature+1
-    format = [format '%6.6f '];
-end
-format
 
-for j=0:1
+for j=0:0
 %Getting datas
 %End of getting datas
 
@@ -35,19 +28,17 @@ if(j~=k_fold_number-1)
 else
     TrainingSet = Data(random_perm(1:floor(j*m/k_fold_number)),:); 
 end
-temp = randperm(m);
-cloud = Data(temp(1:nbr_data_displayed),:);
 %End of set creation
 
 %getting datas;
 dates = TrainingSet(:,1);
-routes = TrainingSet(:,3:19);
+routes = TrainingSet(:,3:14);
 prices = TrainingSet(:,2); 
 dateMax = max(dates);
 priceMax = max(prices);
 
 dates_Cross = CrossValidationSet(:,1);
-routes_Cross = CrossValidationSet(:,3:19);
+routes_Cross = CrossValidationSet(:,3:14);
 prices_Cross = CrossValidationSet(:,2);
 dateMax_Cross = max(dates_Cross);
 priceMax_Cross = max(prices_Cross);
@@ -104,13 +95,16 @@ CVE_D = CVE_D+old_CV_Error;
 %Displaying some data
 %End of datas
 
-fprint(fileID_Theta,format,ridge_theta_matrix(1:nbr_feature+1,idx)');
-fprint(fileID_Theta,'%d\n',j);
-fprint(fileID_CVE,'%6.6f',old_CV_Error);
-fprint(fileID_CVE,'%d\n',j);
-fprint(fileID_lambda,'%6.6f',lambda_CV);
-fprint(fileID_labmda,'%d\n',j);
+fprintf(writerFile,'%d,',j);
+fprintf(writerFile,'%f,',lambda_CV);
+fprintf(writerFile,'%f,',old_CV_Error);
+for p=1:nbr_feature
+   fprintf(writerFile,'%f,',ridge_theta_matrix(p,idx)); 
+end
+fprintf(writerFile,'%f\n',ridge_theta_matrix(nbr_feature+1,idx));
+   
 end
 CVE_D = CVE_D/k_fold_number
+fclose(writerFile);
 %preparing the figure
 

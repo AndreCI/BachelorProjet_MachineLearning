@@ -1,8 +1,5 @@
 clear;
-fileID_lambda = fopen('lambda_out.txt','w');
-fileID_theta = fopen('theta_out.txt','w');
-fileID_CVE = fopen('CVE_out.txt','w');
-
+writerFile = fopen('results.txt','w');
 route=4;
 nbr_feature_max = 8;
 nbr_feature=6+17;
@@ -18,6 +15,11 @@ right_number_complexity=0;
 size_ridge_coef=500;
 CVE_D = 0;
 CVE_matrix = ones(k_fold_number,1);
+format = [''];
+for l=1:nbr_feature+1
+    format = [format '%6.6f '];
+end
+format
 
 for j=0:1
 %Getting datas
@@ -98,11 +100,16 @@ CVE_D = CVE_D+old_CV_Error;
 
 %Displaying some data
 %End of datas
-format = [''];
-for l=1
-fprint(fileID_Theta,'%6.6f,%6.6f,%6.6f,%6.6f,%6.6f,%6.6f,%6.6f'ridge_theta_matrix(1:nbr_feature+1,idx)');
-fprint(fileID_CVE,'%6.6f\n',old_CV_Error);
-fprint(fileID_lambda,'%6.6f\n',lambda_CV);
+
+fprint(writerFile,'%d',j);
+fprint(writerFile,'%f',lambda
+
+fprint(fileID_Theta,format,ridge_theta_matrix(1:nbr_feature+1,idx)');
+fprint(fileID_Theta,'%d\n',j);
+fprint(fileID_CVE,'%6.6f',old_CV_Error);
+fprint(fileID_CVE,'%d\n',j);
+fprint(fileID_lambda,'%6.6f',lambda_CV);
+fprint(fileID_labmda,'%d\n',j);
 end
 CVE_D = CVE_D/k_fold_number
 %preparing the figure

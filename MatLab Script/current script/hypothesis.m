@@ -17,7 +17,7 @@ if(n~=1)
 end
 temp = ones(o,1)*Theta(1,1);
 
-temp =temp+x*Theta(2:m,n);
+temp =x*Theta(2:m,n)+temp;
 %[~,s] = size(Theta);
 %for i=1:(s)
  %   temp = temp + double(Theta(i))*double(x).^(i-1);

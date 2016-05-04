@@ -1,18 +1,49 @@
+clear;
+filename = 'C:\Users\andre\Documents\Projet\MatLab Script\result\results.txt';
+Results = double(csvread(filename, 1, 0));
+nbr_feature = 6+12;
+nbr_data_displayed = 300;
+
+lambdas = Results(:,2);
+crossValidationError = Results(:,3);
+theta_matrix = Results(:,4:4+nbr_feature);
+
+idx = 0;
+CVE = 10;
+for i=1:size(crossValidationError)
+    if(crossValidationError(i)<CVE)
+       idx=i;
+       CVE=crossValidationError(i);
+    end
+end
+
+filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_second.txt';
+Data = double(csvread(filename, 1, 0));
+[m,n] = size(Data);
+dates = Data(:,1);
+routes = Data(:,3:19);
+prices = Data(:,2); 
+dateMax = max(dates);
+priceMax = max(prices);
+
+temp = randperm(m);
+cloud = Data(temp(1:nbr_data_displayed),:);
 
 figure;
 Limits = [0,1*dateMax/(3600*24),0,1*priceMax];
     route_nbr = 4;
-    fplot(@(x)hypothesis_display(ridge_theta_matrix(1:nbr_feature+1,idx),x/(dateMax/(3600*24)),route_nbr)*priceMax, Limits)
+    month_nbr = 3;
+    fplot(@(x)hypothesis_display(transpose(theta_matrix(idx,:)),x/(dateMax/(3600*24)),route_nbr,month_nbr)*priceMax, Limits)
     hold on;
     
     
 Xaxis = double(cloud(:,1)/(3600*24));
 Yaxis = double(cloud(:,2));
 plot(Xaxis,Yaxis,'*')
-title(['Linear regression route = ' num2str(route) ', with ' num2str(nbr_feature) ' features']);
+title(['Ridge Regression route = ' num2str(route_nbr) ', with ' num2str(nbr_feature) ' features']);
 xlabel('Number of days before flight');
 ylabel('Price (in €)');
-ridge_legend = ['ridge, lambda = ' num2str(lambda_CV) ];%' ; TrainError : ' num2str(TE) ' ; CVError : ' num2str(CVE) ' ; TestError : ' num2str(TestE)];
+ridge_legend = ['ridge, lambda = ' num2str(lambdas(idx)) ];%' ; TrainError : ' num2str(TE) ' ; CVError : ' num2str(CVE) ' ; TestError : ' num2str(TestE)];
 data_legend = ['Data (' num2str(nbr_data_displayed) ')'];
 legend(ridge_legend,data_legend);
 %End of figure
