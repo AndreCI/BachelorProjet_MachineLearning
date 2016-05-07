@@ -1,7 +1,8 @@
 clear;
-filename = 'C:\Users\andre\Documents\Projet\MatLab Script\result\results.txt';
+complexity = 7;
+filename = ['C:\Users\André\Documents\GitHub\BachelorProjet_MachineLearning\MatLab Script\result\results_route_month_ ' num2str(complexity) '.txt'];
 Results = double(csvread(filename, 1, 0));
-nbr_feature = 6+12;
+nbr_feature = complexity+12+17;
 nbr_data_displayed = 300;
 
 lambdas = Results(:,2);
@@ -17,7 +18,7 @@ for i=1:size(crossValidationError)
     end
 end
 
-filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_second.txt';
+filename = 'C:\Users\André\Documents\GitHub\BachelorProjet_MachineLearning\MatLab Script\data\dataCSV_second.txt';
 Data = double(csvread(filename, 1, 0));
 [m,n] = size(Data);
 dates = Data(:,1);
@@ -31,16 +32,16 @@ cloud = Data(temp(1:nbr_data_displayed),:);
 
 figure;
 Limits = [0,1*dateMax/(3600*24),0,1*priceMax];
-    route_nbr = 4;
-    month_nbr = 3;
-    fplot(@(x)hypothesis_display(transpose(theta_matrix(idx,:)),x/(dateMax/(3600*24)),route_nbr,month_nbr)*priceMax, Limits)
+    route_nbr = 6;
+    month_nbr = 12;
+    fplot(@(x)hypothesis_display(transpose(theta_matrix(idx,:)),x/(dateMax/(3600*24)),complexity,route_nbr,month_nbr)*priceMax, Limits)
     hold on;
     
     
 Xaxis = double(cloud(:,1)/(3600*24));
 Yaxis = double(cloud(:,2));
 plot(Xaxis,Yaxis,'*')
-title(['Ridge Regression route = ' num2str(route_nbr) ', with ' num2str(nbr_feature) ' features']);
+title(['Ridge Regression : complexity = ' num2str(complexity) ',route = ' num2str(route_nbr) ', month = ' num2str(month_nbr) ', with ' num2str(nbr_feature) ' features']);
 xlabel('Number of days before flight');
 ylabel('Price (in €)');
 ridge_legend = ['ridge, lambda = ' num2str(lambdas(idx)) ];%' ; TrainError : ' num2str(TE) ' ; CVError : ' num2str(CVE) ' ; TestError : ' num2str(TestE)];

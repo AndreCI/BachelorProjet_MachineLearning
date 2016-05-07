@@ -1,12 +1,12 @@
 clear;
-writerFile = fopen('results.txt','w');
+for a=1:8
+writerFile = fopen(['C:\Users\Public\matlab_output\results_route_month_ ' num2str(a) '.txt'],'w');
 route=4;
-nbr_feature_max = 8;
-nbr_feature=6+12;
+nbr_feature=a+12+17;
 fprintf(writerFile,'Idx,lambda,CrossValidationError,ThetaParas (%d)...\n',nbr_feature);
 k_fold_number=10;
 %filename = ['C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_' num2str(route) '.txt'];
-filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_second.txt';
+filename = 'C:\Users\André\Documents\GitHub\BachelorProjet_MachineLearning\MatLab Script\data\dataCSV_route_month.txt';
 Data = double(csvread(filename, 1, 0));
 [m,n] = size(Data);
 random_perm = randperm(m);
@@ -17,7 +17,7 @@ size_ridge_coef=500;
 CVE_D = 0;
 CVE_matrix = ones(k_fold_number,1);
 
-for j=0:0
+for j=0:k_fold_number-1
 %Getting datas
 %End of getting datas
 
@@ -32,13 +32,15 @@ end
 
 %getting datas;
 dates = TrainingSet(:,1);
-routes = TrainingSet(:,3:14);
+routes = TrainingSet(:,3:19);
+month =  TrainingSet(:,21:32);
 prices = TrainingSet(:,2); 
 dateMax = max(dates);
 priceMax = max(prices);
 
 dates_Cross = CrossValidationSet(:,1);
-routes_Cross = CrossValidationSet(:,3:14);
+routes_Cross = CrossValidationSet(:,3:19);
+month_Cross =  CrossValidationSet(:,21:32);
 prices_Cross = CrossValidationSet(:,2);
 dateMax_Cross = max(dates_Cross);
 priceMax_Cross = max(prices_Cross);
@@ -51,8 +53,8 @@ prices_Cross = prices_Cross/priceMax_Cross;
 %end of getting datas
 
 %Parameters
-Xtotal = getInput(dates,6,routes);
-Xtotal_Cross = getInput(dates_Cross,6,routes_Cross);
+Xtotal = getInput(dates,a,routes, month);
+Xtotal_Cross = getInput(dates_Cross,a,routes_Cross,month_Cross);
 %Xtotal = Xtotal(:,1:nbr_feature);
 %end parameters
 
@@ -106,5 +108,6 @@ fprintf(writerFile,'%f\n',ridge_theta_matrix(nbr_feature+1,idx));
 end
 CVE_D = CVE_D/k_fold_number
 fclose(writerFile);
+end
 %preparing the figure
 

@@ -1,4 +1,4 @@
-function [ z ] = hypothesis_display( Theta,x0,route_nbr,month_nbr)
+function [ z ] = hypothesis_display( Theta,x0,complexity,route_nbr,month_nbr)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
 if(size(Theta)<2)
@@ -17,7 +17,7 @@ for i=1:12
         month(i)=0;
     end
 end
-x = getInput(x0,6,month);
+x = getInput(x0,complexity,route,month);
 z = hypothesis(Theta,x);
 end
 
