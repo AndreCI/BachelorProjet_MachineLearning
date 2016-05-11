@@ -3,7 +3,7 @@ figure;
 input_user = 6;
 complexity = input_user;
 nbr_data_displayed = 300;
-filename = 'C:\Users\André\Documents\GitHub\BachelorProjet_MachineLearning\MatLab Script\data\dataCSV_second.txt';
+filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_second.txt';
 Data = double(csvread(filename, 1, 0));
 [m,n] = size(Data);
 dates = Data(:,1);
@@ -23,7 +23,7 @@ cloud = Data(temp(1:nbr_data_displayed),:);
  Yaxis = double(cloud(:,2));
     
 while(input_user~='V')
-filename = ['C:\Users\André\Documents\GitHub\BachelorProjet_MachineLearning\MatLab Script\result\results_route_month_ ' num2str(complexity) '.txt'];
+filename = ['C:\Users\andre\Documents\Projet\MatLab Script\result\results_route_month_ ' num2str(complexity) '.txt'];
 Results = double(csvread(filename, 1, 0));
 nbr_feature = complexity+12+17;
 
@@ -50,8 +50,7 @@ CVE_v = CVE_v/i
 
   input_user = '42';
 while(input_user~='V' & input_user~='D' & input_user~='C')
-    clf;
-
+    clf; %clear the figure
     plot(Xaxis,Yaxis,'*')
     hold on;
    
