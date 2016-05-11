@@ -1,16 +1,18 @@
 clear;
 figure;
-input_user = 6;
+input_user = 5;
 complexity = input_user;
 nbr_data_displayed = 300;
 filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_second.txt';
 Data = double(csvread(filename, 1, 0));
 [m,n] = size(Data);
 dates = Data(:,1);
-routes = Data(:,3:19);
+flightDuration = Data(:,3);
+routes = Data(:,4:20);
 prices = Data(:,2); 
 dateMax = max(dates);
 priceMax = max(prices);
+flightDurationMax = max(flightDuration);
 
 temp = randperm(m);
 cloud = Data(temp(1:nbr_data_displayed),:);
@@ -67,17 +69,29 @@ legend(data_legend,ridge_legend);
 input_user = upper(input('Q/W to increments/decrements route, S/X for month, D/C for complexity, V to quit : ', 's'));
 
     if(input_user=='Q')
-         route_nbr = route_nbr+1;
+        if(route_nbr<17)
+           route_nbr = route_nbr+1;
+        end
     elseif(input_user=='W')
-        route_nbr=route_nbr-1;
+        if(route_nbr>1)
+         route_nbr=route_nbr-1;
+        end
     elseif(input_user=='S')
+        if(month_nbr<12)
         month_nbr=month_nbr+1;
+        end
     elseif(input_user=='X')
+        if(month_nbr>1)
        month_nbr=month_nbr-1; 
+        end
     elseif(input_user=='D')
+        if(complexity<6)
         complexity=complexity +1;
+        end
     elseif(input_user=='C')
+        if(complexity>3)
         complexity=complexity-1;
+        end
     end
 end
 

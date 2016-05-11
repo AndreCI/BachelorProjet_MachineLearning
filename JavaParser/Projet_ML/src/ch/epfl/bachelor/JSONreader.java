@@ -11,6 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by andre on 22/02/2016.
@@ -53,6 +55,8 @@ public class JSONreader {
                         JSONObject e = (JSONObject) flights.get(0);
                         double price = checkAndChangeCurrency((String) currentData.get("MinimumPrice"));
                         long flightDepartureTime = getUnixTime((String) currentData.get("CurrentDate"), (String) e.get("STD"));
+                        String flightArrivalHour = (String) e.get("STA");
+                        String flightDepartureHour = (String) e.get("STD");
                         if (price != 0) {
                             if(Main.loopNumber==0) {
                                 dataHolder.addValueForAveragePrice(route, price, new Date(flightDepartureTime*1000));
@@ -60,7 +64,7 @@ public class JSONreader {
 
                                 Date departureTime = new Date(flightDepartureTime*1000);
                                 int month = departureTime.getMonth();
-                                writer.writerLine(uTimeCurrentDay, route, price, flightDepartureTime, month);
+                                writer.writerLine(uTimeCurrentDay, route, price, flightDepartureTime, month,getFlightDuration(flightDepartureHour,flightArrivalHour));
                             }else if(Main.loopNumber==1){
                                 dataHolder.addDataForBiggestPriceChange(route,uTimeCurrentDay,flightDepartureTime,price);
                             }
@@ -75,6 +79,38 @@ public class JSONreader {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    private long getFlightDuration(String departureTime, String arrivalTime){
+        Pattern hourPattern = Pattern.compile("[0-9]:[0-9]");
+        Matcher d = hourPattern.matcher(departureTime);
+        Matcher a = hourPattern.matcher(arrivalTime);
+        if(!d.find() || !a.find()){
+            throw new IllegalArgumentException(departureTime +" : departure Hour ; " + arrivalTime + " : arrival Hour ");
+        }
+        //System.out.println(departureTime + " :: "+arrivalTime);
+        String[] depart = departureTime.split(":");
+        int departHour = 0;
+        int departMin = 0;
+        String[] arrival = arrivalTime.split(":");
+        int arrivalHour = 0;
+        int arrivalMin = 0;
+        try{
+            departHour = Integer.parseInt(depart[0]);
+            departMin = Integer.parseInt(depart[1]);
+            arrivalHour = Integer.parseInt(arrival[0]);
+            arrivalMin = Integer.parseInt(arrival[1]);
+        }catch (NumberFormatException e ){
+            e.printStackTrace();
+        }
+        if(arrivalHour<departHour){
+            arrivalHour+=24;
+        }
+        //System.out.println(arrivalHour + " ; "+arrivalMin + " :: "+departHour + " ; "+ departMin);
+        long arrivalTotal = arrivalHour*60*60*1000 + arrivalMin*60*1000;
+        long departTotal = departHour*60*60*1000 + departMin*60*1000;
+        return arrivalTotal-departTotal;
+
     }
 
     private double getCurrency(String price){

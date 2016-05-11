@@ -1,4 +1,4 @@
-function [ z ] = getInput( x,complexity,route,month )
+function [ z ] = getInput( x,complexity,flightDuration,route,month )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -8,6 +8,7 @@ temp = ones(m,complexity);
 for i=1:complexity
     temp(:,i) = dbf_double.^i;% = horzcat(temp,dbf_double.^i);
 end
+temp = horzcat(temp,flightDuration);
 if(size(route)~=[0,0])
     temp = horzcat(temp, route);
 end

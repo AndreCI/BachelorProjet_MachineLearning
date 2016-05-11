@@ -27,7 +27,7 @@ public class CSVwriter {
             writer.println("Route,dataTime,flightTime,Price");
             singleRouteWriter.println("dateBeforeFlight, Price");
            // writer.println("Route, dateBeforeFlight, Price");
-            secondWriter.print("dateBeforeFlight, Price");
+            secondWriter.print("dateBeforeFlight, Price, FlightDuration, routes (17) as bool, month(12) as bool");
             thirdWriter.println("dateBeforeFlight,Price,month(boolean)");
             for(int i=1;i<=17;i++){
                 secondWriter.print(", "+"route"+i);
@@ -39,14 +39,14 @@ public class CSVwriter {
         extraWriter = new ExtraDataWriter();
     }
 
-    public void writerLine(long dataDate, int route, double price, long flightDate, int month){
+    public void writerLine(long dataDate, int route, double price, long flightDate, int month, long flightTime){
         writer.println((route+1) + "," +(dataDate) + "," + (flightDate)+","+ price);
         if(route+1==routeNbr){
             singleRouteWriter.println((flightDate-dataDate)+","+price);
         }
 
         thirdWriter.print((flightDate-dataDate)+","+price);
-        secondWriter.print((flightDate-dataDate)+","+price);
+        secondWriter.print((flightDate-dataDate)+","+price+","+flightTime);
         for(int i=1;i<=17;i++){
             if((route+1)==i){
                 secondWriter.print(","+1);
