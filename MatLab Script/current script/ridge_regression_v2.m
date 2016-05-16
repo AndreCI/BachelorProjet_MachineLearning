@@ -6,7 +6,7 @@ nbr_feature=a+1+12+17;
 fprintf(writerFile,'Idx,lambda,TrainingError, CrossValidationError, TestError, ThetaParas (%d)...\n',nbr_feature);
 k_fold_number=10;
 %filename = ['C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_' num2str(route) '.txt'];
-filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_month.txt';
+filename = 'C:\Users\André\Documents\GitHub\BachelorProjet_MachineLearning\MatLab Script\data\dataCSV_route_month.txt';
 Data = double(csvread(filename, 1, 0));
 [m,~] = size(Data);
 TestSet_random_perm = randperm(m);
