@@ -1,12 +1,12 @@
 clear;
-for a=3:6
-writerFile = fopen(['C:\Users\Public\matlab_output\results_route_month_ ' num2str(a) '.txt'],'w');
+for a=3:3
+writerFile = fopen(['C:\Users\Public\matlab_output\results_TbF_route_month_ ' num2str(a) '.txt'],'w');
 %route=4;
 nbr_feature=a+1+12+17;
 fprintf(writerFile,'Idx,lambda,TrainingError, CrossValidationError, TestError, ThetaParas (%d)...\n',nbr_feature);
 k_fold_number=10;
 %filename = ['C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_' num2str(route) '.txt'];
-filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_month.txt';
+filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_TbF_route_month.txt';
 Data = double(csvread(filename, 1, 0));
 [m,~] = size(Data);
 TestSet_random_perm = randperm(m);
