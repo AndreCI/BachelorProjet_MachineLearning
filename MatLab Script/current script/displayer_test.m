@@ -3,9 +3,7 @@ function displayer_test
 clear;
 
     f = figure('Visible','off');
-
-input_user = 3;
-complexity = input_user;
+complexity = 3;
 nbr_data_displayed = 300;
 filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_TbF_route_month.txt';
 Data = double(csvread(filename, 1, 0));
@@ -29,7 +27,32 @@ cloud = Data(temp(1:nbr_data_displayed),:);
  Xaxis = double(cloud(:,1)/(3600*24));
  Yaxis = double(cloud(:,2));
     
-filename = ['C:\Users\andre\Documents\Projet\MatLab Script\result\results_TbF_route_month_ ' num2str(complexity) '.txt'];
+   route_array = {'BCN BUD','BUD BCN','CRL OTP','MLH SKP','MMX SKP','OTP CRL','SKP MLH','SKP MMX','BGY OTP','BUD VKO','CRL WAW','LTN OTP','LTN PRG','OTP BGY','OTP LTN','PRG LTN','VKO BUD'};
+    month_array = {'January','February','March','April','May','June','July', 'August','September','October','November','December' };
+  
+  display();
+
+function setMonth_test(source,callbackdata) 
+        month_nbr = source.Value;
+        display();
+end
+function setRoute_test(source,callbackdata) 
+        route_nbr = source.Value;
+        display();
+end
+function setFlightDuration_test(source,callbackdata) 
+        currentFlightDur = floor(source.Value);
+        display();
+end
+
+    function setComplexity(source,callbackdata)
+        complexity = source.Value;
+        display();
+    end
+
+function display()
+        
+        filename = ['C:\Users\andre\Documents\Projet\MatLab Script\result\results_TbF_route_month_ ' num2str(complexity) '.txt'];
 Results = double(csvread(filename, 1, 0));
 nbr_feature = complexity+1+12+17;
 
@@ -76,27 +99,8 @@ TrE_v = TrE_v/i
 CVE_v = CVE_v/i
 TeE_v = TeE_v/i
 
-  display();
-
-function setMonth_test(source,callbackdata) 
-        month_nbr = source.Value;
-        display();
-end
-function setRoute_test(source,callbackdata) 
-        route_nbr = source.Value;
-        display();
-end
-function setFlightDuration_test(source,callbackdata) 
-        currentFlightDur = floor(source.Value);
-        display();
-end
-
-    function display()
             clf; %clear the figure
         
-    route_array = {'BCN BUD','BUD BCN','CRL OTP','MLH SKP','MMX SKP','OTP CRL','SKP MLH','SKP MMX','BGY OTP','BUD VKO','CRL WAW','LTN OTP','LTN PRG','OTP BGY','OTP LTN','PRG LTN','VKO BUD'};
-    month_array = {'January','February','March','April','May','June','July', 'August','September','October','November','December' };
-         
             uicontrol('Style', 'popup',...
            'String', month_array,...
             'Value',(month_nbr),...
@@ -109,9 +113,15 @@ end
            'Position', [20 20 80 50],...
            'Callback', @setRoute_test);
        
+        uicontrol('Style', 'popup',...
+           'String', {1,2,3,4,5,6},...
+           'Value',(complexity),...
+           'Position', [20 20 80 80],...
+           'Callback', @setComplexity);
+       
         uicontrol('Style', 'slider',...
         'Min',1,'Max',flightDurationMax,'Value',currentFlightDur,...
-        'Position', [20 80 120 20],...
+        'Position', [20 110 120 20],...
         'Callback', @setFlightDuration_test); 
             
     
