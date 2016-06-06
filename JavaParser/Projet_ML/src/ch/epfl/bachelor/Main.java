@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+
 public class Main {
 
     private static PrintWriter infoWriter;
@@ -18,6 +19,7 @@ public class Main {
     public static long startTime = System.nanoTime();
     public static long endTime;
     public static int loopNumber = 0;
+    public static int idx = 0;
 
     public static void main(String[] args) {
         final File largeDataPath = new File("c:/Users/andre/IdeaProjects/Projet_ML/data/data/data/Large data set/");
