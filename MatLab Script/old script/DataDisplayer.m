@@ -1,4 +1,4 @@
-filename = 'dataCSV_displayer.txt';
+filename = 'C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_displayer.txt';
 
 seed = input('rentrez une valeur entre 0 et 500 000 : ');
 Data =csvread(filename, 1, 0);
@@ -18,9 +18,11 @@ start = Xaxis(1);
 endA = Xaxis(length(Xaxis));
 Xa = datetime(Xaxis, 'ConvertFrom', 'posixtime' );
 xx = datenum(Xa);
-plot(xx, Yaxis, '*')
-datetick('x')
+plot(Xaxis/(3600*24), Yaxis, '*')
+%datetick('x')
 V=axis;
 axis([V(1) V(2) 0 (V(4)+10)]);
 dt = datetime(Value, 'ConvertFrom', 'posixtime' );
+xlabel('Time in day before the flight');
+ylabel('Price in €');
 title(['Route : ', num2str(Route), ', date : ', datestr(dt)]);

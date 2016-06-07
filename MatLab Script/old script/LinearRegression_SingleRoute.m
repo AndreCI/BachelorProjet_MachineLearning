@@ -2,7 +2,7 @@
 %for i=1:17
 figure;
 route=4;
-filename = ['dataCSV_route_' num2str(route) '.txt'];
+filename = ['C:\Users\andre\Documents\Projet\MatLab Script\data\dataCSV_route_' num2str(route) '.txt'];
 Data = double(csvread(filename, 1, 0));
 [m,n] = size(Data);
 k = randperm(m);
@@ -12,7 +12,7 @@ TrainingSet = Data(k(1:floor(m*0.6)),:);
 CrossValidationSet = Data(k(floor(m*0.6):floor(m*0.6)+floor(m*0.2)),:);
 TestSet = Data(k(floor(m*0.6)+floor(m*0.2):m),:);
 k = randperm(m);
-cloud = Data(k(1:500),:);
+cloud = Data(k(1:200),:);
 
 %getting datas;
 date_before_flight = TrainingSet(:,1);
@@ -39,14 +39,14 @@ prices_Test = prices_Test/yNormal_Test;
 
 %Parameters
 dbf_double = double(date_before_flight);
-nbr_feature = 4;
+nbr_feature = 3;
 base = ones(size(date_before_flight));
 x0s2 = dbf_double.^2;
 x0s3 = dbf_double.^3;
 x0s4 = dbf_double.^4;
 x0s5 = dbf_double.^5;
 x0s6 = dbf_double.^6;
-Xtotal = horzcat(base,dbf_double,x0s2,x0s3,x0s4);%,x0s5,x0s6);
+Xtotal = horzcat(base,dbf_double,x0s2,x0s3);%,x0s4);%,x0s5,x0s6);
 Xtotal_ridge = horzcat(dbf_double,Xtotal);
 %end parameters
 
@@ -99,8 +99,8 @@ lambda_actu = lambda_coef(indice_retenu);
 Limits = [0,1*xNormal/(3600*24),0,1*yNormal];
 %fplot(@(x)hypothesis_SingleRoute(Theta,x), Limits)
 %hold on;
-fplot(@(x)hypothesis_SingleRoute(b_matrix(indice_retenu,1:nbr_feature+1),x/(xNormal/(3600*24)))*yNormal, Limits)
-hold on;
+%fplot(@(x)hypothesis_SingleRoute(b_matrix(indice_retenu,1:nbr_feature+1),x/(xNormal/(3600*24)))*yNormal, Limits)
+%hold on;
 %fplot(@(x)hypothesis_SingleRoute(c_matrix(indice_retenu_c,1:nbr_feature),x/(xNormal/(3600*24)))*yNormal, Limits)
 %hold on;
 fplot(@(x)hypothesis_SingleRoute(reg,x/(xNormal/(3600*24)))*yNormal, Limits)
@@ -121,7 +121,7 @@ title(['Linear regression route = ' num2str(route)]);
 xlabel('Number of days before flight');
 ylabel('Price (in €)');
 %['ridge_c, lambda = ' num2str(lambda_actu_c)],
-legend(['ridge, lambda = ' num2str(lambda_actu)],'regress','Data');
+legend('Common trend obtain by multilinear regression','Data (200 example choosen randomly)');
 
 %end
 %pause;

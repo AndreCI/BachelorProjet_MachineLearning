@@ -196,8 +196,6 @@ elseif(switcher==1)
 
 %Xaxis = 1:nbr_feature_max;
 Xaxis = 2:5;
-TE_matrix(2,1) = TE_matrix(2,1)+0.2;
-CV_matrix(2,1) = CV_matrix(2,1)+0.2;
 ef = TE_matrix(2:6,1);
     figure;
     plot(Xaxis,TE_matrix(2:5,1));
