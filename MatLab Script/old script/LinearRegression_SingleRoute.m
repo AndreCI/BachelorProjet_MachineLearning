@@ -39,14 +39,14 @@ prices_Test = prices_Test/yNormal_Test;
 
 %Parameters
 dbf_double = double(date_before_flight);
-nbr_feature = 3;
+nbr_feature = 4;
 base = ones(size(date_before_flight));
 x0s2 = dbf_double.^2;
 x0s3 = dbf_double.^3;
 x0s4 = dbf_double.^4;
 x0s5 = dbf_double.^5;
 x0s6 = dbf_double.^6;
-Xtotal = horzcat(base,dbf_double,x0s2,x0s3);%,x0s4);%,x0s5,x0s6);
+Xtotal = horzcat(base,dbf_double,x0s2,x0s3,x0s4);%,x0s5,x0s6);
 Xtotal_ridge = horzcat(dbf_double,Xtotal);
 %end parameters
 

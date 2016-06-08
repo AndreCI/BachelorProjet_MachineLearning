@@ -22,8 +22,8 @@ public class Main {
     public static int idx = 0;
 
     public static void main(String[] args) {
-        final File largeDataPath = new File("c:/Users/andre/IdeaProjects/Projet_ML/data/data/data/Large data set/");
-        final File smallDataPath = new File("c:/Users/andre/IdeaProjects/Projet_ML/data/data/data/Small data set/");
+        final File largeDataPath = new File("C:/Users/andre/Documents/Projet/data/data/Large data set/");
+        final File smallDataPath = new File("C:/Users/andre/Documents/Projet/data/data/Small data set/");
 
         if(!(largeDataPath.isDirectory()) || !(smallDataPath.isDirectory())){
             try {
