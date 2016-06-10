@@ -86,7 +86,7 @@ public class VarAndMoyCalculator {
         for(int i=0;i<dataLength;i++) {
             writer.println("For Param "+i+ ", m="+moyenne.get(i)+" ;var="+variance.get(i));
         }
-        
+
         writer.close();
 
     }

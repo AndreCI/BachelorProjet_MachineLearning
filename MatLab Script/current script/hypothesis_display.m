@@ -18,6 +18,6 @@ for i=1:12
     end
 end
 x = getInput(x0,complexity,flightDuration,route,month);
-z = hypothesis(Theta,x);
+z = hypothesis_regress(Theta,x);
 end
 

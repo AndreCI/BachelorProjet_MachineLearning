@@ -65,8 +65,8 @@ end
 
 b_matrix = transpose(ridge(double(prices),Xtotal,lambda_coef,1));
 %c_matrix = transpose(ridge(double(prices),Xtotal_ridge,lambda_coef_c,1));
-reg = transpose(regress(double(prices),Xtotal));
-
+[reg conf] = (regress(double(prices),Xtotal));
+reg = transpose(reg);
 indice_retenu=0;
 indice_retenu_c=0;
 old = 10^160;
